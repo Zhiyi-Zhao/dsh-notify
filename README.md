@@ -15,15 +15,30 @@ Clicking a notification focuses the window and opens the session it came from.
 
 ## Install
 
-From GitHub:
+### Option 1: the prebuilt tarball (recommended, no build authorization)
+
+Download `dsh-notify-0.1.0.tgz` from [Releases](https://github.com/Zhiyi-Zhao/dsh-notify/releases):
+
+```sh
+dsh plugin --profile desktop add ./dsh-notify-0.1.0.tgz
+```
+
+The built artifacts ship inside the package and no build script runs during installation (verified against an isolated profile).
+
+### Option 2: straight from GitHub
 
 ```sh
 dsh plugin --profile desktop add github:Zhiyi-Zhao/dsh-notify
 ```
 
-The built artifacts (`lib/`) are committed, so this needs no build-script authorization and no local toolchain.
+The built artifacts (`lib/`) are committed, so no local toolchain is needed. pnpm may still require explicit approval for a git dependency's build script; if the command asks for that, add the key it prints to the profile's `pnpm-workspace.yaml` and retry:
 
-From a local directory (development):
+```yaml
+allowBuilds:
+  dsh-notify: true
+```
+
+### Option 3: a local directory (development)
 
 ```sh
 dsh plugin --profile <profile> add /absolute/path/to/dsh-notify

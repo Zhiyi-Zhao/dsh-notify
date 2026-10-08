@@ -15,15 +15,30 @@
 
 ## 安装
 
-从 GitHub 安装：
+### 方式一：预构建包（推荐，无需构建授权）
+
+从 [Releases](https://github.com/Zhiyi-Zhao/dsh-notify/releases) 下载 `dsh-notify-0.1.0.tgz`：
+
+```sh
+dsh plugin --profile desktop add ./dsh-notify-0.1.0.tgz
+```
+
+构建产物已打进包里，安装时不跑任何构建脚本（已在隔离 profile 上实测）。
+
+### 方式二：直接从 GitHub 安装
 
 ```sh
 dsh plugin --profile desktop add github:Zhiyi-Zhao/dsh-notify
 ```
 
-构建产物（`lib/`）随仓库一起提交，因此**不需要**授予构建脚本权限，也不需要本地工具链。
+`lib/` 构建产物随仓库一起提交，因此不需要本地工具链。不过 pnpm 对 git 依赖可能仍要求显式允许其构建脚本；若命令提示需要授权，把它打印的键加进该 profile 的 `pnpm-workspace.yaml` 后重试：
 
-从本地目录安装（开发时）：
+```yaml
+allowBuilds:
+  dsh-notify: true
+```
+
+### 方式三：本地目录（开发时）
 
 ```sh
 dsh plugin --profile <profile> add /绝对路径/dsh-notify

@@ -1,0 +1,7 @@
+# dsh-notify — mount the desktop-notification plugin over any shipped Web
+# composition. The package carries both a browser half (`./client`, which
+# renders every notification through the Web Notification API) and this layer,
+# which is what makes the row part of the profile at all.
+- insert:
+    - id: dsh-notify
+      name: dsh-notify

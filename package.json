@@ -1,0 +1,56 @@
+{
+  "name": "dsh-notify",
+  "version": "0.1.0",
+  "description": "Real operating-system notifications for DeepSeek Harness: a turn finished, a turn failed, or an agent is waiting for your confirmation.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "notification",
+    "toast",
+    "action-center"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhiyi-Zhao/dsh-notify.git"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test": "node tests/triggers.spec.ts",
+    "check": "tsc -p tsconfig.json && node tests/triggers.spec.ts && node scripts/verify-bundle.mjs"
+  },
+  "devDependencies": {
+    "tsdown": "^0.22.2",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": "^22.19 || >=24"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}

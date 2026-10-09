@@ -1,5 +1,10 @@
 # dsh-notify
 
+**English** | [中文](README.zh.md)
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![DeepSeek Harness plugin](https://img.shields.io/badge/DeepSeek%20Harness-plugin-4B6BFB.svg)](https://github.com/deepseek-ai/deepseek-harness)
+
 Real operating-system notifications for DeepSeek Harness: a Windows Action Center toast, a macOS Notification Center banner, or a Linux notification-daemon message, raised when DSH needs you back at the window.
 
 ## What it notifies

@@ -1,5 +1,10 @@
 # dsh-notify
 
+[English](README.md) | **中文**
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![DeepSeek Harness plugin](https://img.shields.io/badge/DeepSeek%20Harness-plugin-4B6BFB.svg)](https://github.com/deepseek-ai/deepseek-harness)
+
 给 DeepSeek Harness 加上**真正的操作系统通知**：Windows 通知中心 toast、macOS 通知中心横幅，或 Linux 通知守护进程的消息；在 DSH 需要你回到窗口时提醒你。
 
 ## 什么时候会通知
